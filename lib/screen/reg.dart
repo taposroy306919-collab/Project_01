@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/screen/login.dart';
 
 
 class RegScreen extends StatefulWidget {
@@ -33,7 +34,7 @@ class _RegScreenState extends State<RegScreen> {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               decoration: InputDecoration(
-                labelText: "Email",
+                labelText: "Name",
                 prefixIcon: Icon(Icons.person),
                 suffixIcon: Icon(Icons.email),
                 border: OutlineInputBorder(
@@ -46,7 +47,61 @@ class _RegScreenState extends State<RegScreen> {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               decoration: InputDecoration(
+                  labelText: "Email",
+                  prefixIcon: const Icon(Icons.lock),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      // Show/Hide password
+                    },
+                    icon: const Icon(Icons.visibility),
+                  ),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12)
+                  )
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                  labelText: "Phone Number",
+                  prefixIcon: const Icon(Icons.lock),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      // Show/Hide password
+                    },
+                    icon: const Icon(Icons.visibility),
+                  ),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12)
+                  )
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
                   labelText: "PassWord",
+                  prefixIcon: const Icon(Icons.lock),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      // Show/Hide password
+                    },
+                    icon: const Icon(Icons.visibility),
+                  ),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12)
+                  )
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                  labelText: "ConFirm PassWord",
                   prefixIcon: const Icon(Icons.lock),
                   suffixIcon: IconButton(
                     onPressed: () {
@@ -77,7 +132,20 @@ class _RegScreenState extends State<RegScreen> {
                 ],
               ),
             ),
-          )
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 15,
+            children: [
+              Text("AlReady Registered?"),
+              InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+                  },
+                  child: Text("Login Now", style: TextStyle(color:Colors.blue),)
+              )
+            ],
+          ),
         ],
       ),
     );
