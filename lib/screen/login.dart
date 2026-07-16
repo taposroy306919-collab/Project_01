@@ -77,7 +77,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
             ),
-          )
+          ),
+          
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 15,
+            children: [
+              Text("Not Register Yet?"),
+              Text("Register Now", style: TextStyle(color:Colors.blue),)
+            ],
+          ),
+
         ],
       ),
     );
