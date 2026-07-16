@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/screen/login.dart';
 
 
 class Splashscreen extends StatefulWidget {
@@ -9,6 +10,19 @@ class Splashscreen extends StatefulWidget {
 }
 
 class _SplashscreenState extends State<Splashscreen> {
+
+  @override
+  void initState(){
+    timerFun();
+    super.initState();
+  }
+
+  Future<void> timerFun() async {
+    await Future.delayed(const Duration(seconds: 2)).then((_) {
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

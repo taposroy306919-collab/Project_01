@@ -19,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
         children: [
           Image.network(
               "https://png.pngtree.com/thumb_back/fh260/background/20240421/pngtree-blue-water-splash-wave-screen-background-image_15717616.jpg",
-              height: 150,
+              height: 250,
             width: 450,
             fit: BoxFit.cover,
           ),
