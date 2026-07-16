@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/screen/reg.dart';
 
 
 class LoginScreen extends StatefulWidget {
@@ -84,7 +85,12 @@ class _LoginScreenState extends State<LoginScreen> {
             spacing: 15,
             children: [
               Text("Not Register Yet?"),
-              Text("Register Now", style: TextStyle(color:Colors.blue),)
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => RegScreen()));
+                },
+                  child: Text("Register Now", style: TextStyle(color:Colors.blue),)
+              )
             ],
           ),
 
