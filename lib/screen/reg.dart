@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegScreen extends StatefulWidget {
+  const RegScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegScreen> createState() => _RegScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegScreenState extends State<RegScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
             width: 450,
             fit: BoxFit.cover,
           ),
-          Text("Log In Here",
+          Text("REGISTER Here",
             style: TextStyle(
                 color: Colors.blue,
                 fontWeight: FontWeight.bold,
