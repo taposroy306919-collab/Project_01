@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:project_1/screen/reg.dart';
+import 'package:project_1/screen/home.dart';
 
 
 class LoginScreen extends StatefulWidget {
@@ -10,6 +13,12 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
+              controller: email,
               decoration: InputDecoration(
                 labelText: "Email",
                 prefixIcon: Icon(Icons.person),
@@ -46,6 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
+              controller: password,
               decoration: InputDecoration(
                   labelText: "PassWord",
                   prefixIcon: const Icon(Icons.lock),
@@ -63,6 +74,43 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           InkWell(
             onTap: () {
+              if(email.text == "trp@gmail.com" && password.text == "1234594"){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+              }else{
+                //log("=======Message====");
+                //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Wrong Email/Password")));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Row(
+                      children: const [
+                        Icon(Icons.error_outline, color: Colors.white),
+                        SizedBox(width: 10),
+                        Expanded(
+                          child: Text(
+                            "Wrong Email or Password",
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ),
+                      ],
+                    ),
+                    backgroundColor: Colors.red.shade600,
+                    behavior: SnackBarBehavior.floating,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    margin: const EdgeInsets.all(15),
+                    elevation: 8,
+                    duration: const Duration(seconds: 3),
+                    action: SnackBarAction(
+                      label: "Retry",
+                      textColor: Colors.yellow,
+                      onPressed: () {
+                        // Retry action
+                      },
+                    ),
+                  ),
+                );
+              }
 
             },
             child: Card(
