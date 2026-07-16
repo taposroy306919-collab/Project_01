@@ -13,7 +13,9 @@ class _SplashscreenState extends State<Splashscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Icon(Icons.person, size: 200,)
+        child: Image.network(
+          "https://png.pngtree.com/thumb_back/fh260/background/20240421/pngtree-blue-water-splash-wave-screen-background-image_15717616.jpg"
+        ),
       ),
     );
   }
